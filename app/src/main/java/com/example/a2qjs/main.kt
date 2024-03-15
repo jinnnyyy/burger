@@ -30,12 +30,21 @@ fun main(){
     list.add (Ham("Shrimp",13000))
     list.add (Ham("Chicken",12000))
     println("안녕하세요. 주문하시겠습니까?")
+    var num1 : Int? = null
     while (true){
+
         println("햄버거 1, 사이드 2, 음료 3, 주문 종료 0")
-        val num1=readLine()!!.toInt()
+        try {
+            num1=readLine()!!.toInt()
+        }
+        catch (e:java.lang.NumberFormatException){
+            println("숫자를 입력해주세요")
+        }
+
         if (num1!=0){
 
             when (num1){
+
                 1-> {
                     list.get(7).displayInfo()
                     list.get(8).displayInfo()
@@ -52,6 +61,9 @@ fun main(){
                     list.get(2).displayInfo()
                     list.get(3).displayInfo()
 
+                }
+                else -> {
+                    println("다시 선택해 주세요")
                 }
             }
 
