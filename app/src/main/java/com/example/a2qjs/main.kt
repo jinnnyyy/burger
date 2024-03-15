@@ -1,6 +1,7 @@
 @file:Suppress("DEPRECATED_IDENTITY_EQUALS")
 
 package com.example.a2qjs
+
 //[ 필요한 기능 ]
 //요구사항1: 메인 메뉴판 화면
 //: 메뉴 선택시 상세 메뉴화면으로 이동
@@ -16,28 +17,50 @@ package com.example.a2qjs
 
 
 fun main(){
+    val list = arrayListOf<Food
+            >()
+    list.add (Drink("Coke",2000))
+    list.add (Drink("ZeroCo",2000))
+    list.add (Drink("Cider",2000))
+    list.add (Drink("ZeroCi",2000))
+    list.add (Side("Onion",6500))
+    list.add (Side("Potato",5500))
+    list.add (Side("Nugget",6000))
+    list.add (Ham("Shake",15000))
+    list.add (Ham("Shrimp",13000))
+    list.add (Ham("Chicken",12000))
     println("안녕하세요. 주문하시겠습니까?")
     while (true){
         println("햄버거 1, 사이드 2, 음료 3, 주문 종료 0")
         val num1=readLine()!!.toInt()
         if (num1!=0){
+
             when (num1){
+                1-> {
+                    list.get(7).displayInfo()
+                    list.get(8).displayInfo()
+                    list.get(9).displayInfo()
+                    }
+                2-> {
+                    list.get(4).displayInfo()
+                    list.get(5).displayInfo()
+                    list.get(6).displayInfo()
+                }
 
-                1-> {println("불고기 버거 1, 새우 버거 2, 치킨 버거 3")
-                    var num2 = readLine()!!.toInt()
-                    Ham().ham(num2)}
-                2-> {println("감자 튀김 1, 양파 튀김 2, 치킨 너겟 3")
-                    var num2 = readLine()!!.toInt()
-                    side().Side(num2)}
-                3-> {println("콜라 1, 제로 콜라 2, 사이다 3, 제로 사이다 4")
-                    var num2 = readLine()!!.toInt()
-                    drink().Drink(num2)}
+                3-> { list.get(0).displayInfo()
+                    list.get(1).displayInfo()
+                    list.get(2).displayInfo()
+                    list.get(3).displayInfo()
 
+                }
             }
 
-
+        }
+        if (num1==0){
+            break
         }
     }
 }
+
 
 
